@@ -1,13 +1,13 @@
 <?php
-namespace Blog;
-class Penulis {
-	function tambahPenulis($nama, $email, $alamat){
+namespace komputer;
+class Produk {
+	function tambahProduk($brand, $model, $release_year){
 		$db = new Db();
 		
-		$stmt = $db->prepare("INSERT INTO penulis (nama, email, alamat) VALUES (?, ?, ?)");
-		$stmt->bindParam(1, $nama);
-		$stmt->bindParam(2, $email);
-		$stmt->bindParam(3, $alamat);
+		$stmt = $db->prepare("INSERT INTO komputer (brand, model, release_year) VALUES (?, ?, ?)");
+		$stmt->bindParam(1, $brand);
+		$stmt->bindParam(2, $model);
+		$stmt->bindParam(3, $release_year);
 		$stmt->execute();
 		
 		echo "Sukses";
